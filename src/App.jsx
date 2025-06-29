@@ -8,20 +8,12 @@ import "./App.css";
 function App() {
   return (
     <Router>
-      <nav className="flex gap-6 p-4 bg-green-900 text-white">
-        <Link to="/">Accueil</Link>
-        <Link to="/services">Services</Link>
-        <Link to="/realisations">Réalisations</Link>
-        <Link to="/contact">Contact</Link>
-      </nav>
-      <div className="p-4">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/realisations" element={<Realisations />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/realisations" element={<Realisations />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
     </Router>
   );
 }
