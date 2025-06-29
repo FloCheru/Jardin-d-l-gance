@@ -1,4 +1,6 @@
 import backGroundHomePage from "../assets/homepage/background-homepage.jpg";
+import Button from "../components/Button";
+
 export default function Home() {
   return (
     <div className="container relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-gray-900">
@@ -35,7 +37,7 @@ export default function Home() {
           </div>
         </nav>
 
-        <div className="flex border-2 border-yellow-500">
+        <div className="flex items-start gap-[40px] border-2 border-yellow-500">
           {/* Titre et description */}
           <div className="flex-1 flex flex-col justify-center items-start px-8 max-w-3xl mx-auto">
             <h1 className="hero-title mb-6">
@@ -51,9 +53,14 @@ export default function Home() {
           </div>
 
           {/* Bloc "500+ Satisfied Clients" */}
-          <div className="bg-white bg-opacity-10 border border-white rounded-xl p-8 text-white text-xl font-light backdrop-blur-md z-30 flex flex-col items-center min-w-[220px]">
-            <span className="text-4xl font-semibold mb-2">500+</span>
-            Satisfied Clients
+          <div className="bg-white bg-opacity-10 border border-white rounded-xl p-[var(--button-padding)] text-white text-xl backdrop-blur-md z-30 flex flex-col items-center min-w-[220px]">
+            <span className="font-semibold mb-2 text-[var(--color-secondary)]">
+              500+
+            </span>
+            <span className="text-[var(--color-secondary)] !font-normal">
+              Satisfied Clients
+            </span>
+
             <div className="flex gap-2 mt-4">
               <span className="w-5 h-5 border-2 border-white rounded-full inline-block" />
               <span className="w-5 h-5 border-2 border-white rounded-full inline-block" />
@@ -63,19 +70,22 @@ export default function Home() {
         </div>
 
         {/* Bloc boutons + Hachioji Garden */}
-        <div className="flex justify-between border-2 border-yellow-500">
-          <div className="flex gap-[20px]">
+        <div className="flex justify-between items-start border-2 border-yellow-500">
+          {/* <div className="flex gap-[20px]">
             <button className="bg-white text-black font-medium px-8 py-3 rounded shadow hover:bg-gray-200 transition">
               Get Started
             </button>
             <button className="bg-transparent border border-white text-white font-medium px-8 py-3 rounded hover:bg-white hover:text-black transition">
               Explore Projects
-            </button>
+            </button> */}
+          <div className="flex gap-[20px]">
+            <Button variant="secondary">Get Started</Button>
+            <Button variant="tertiary">Explore Projects</Button>
           </div>
           <div className=" flex flex-col items-center gap-[20px] p-[var(--container-padding)] w-[40%] border-2 border-yellow-500 bg-white bg-opacity-20 rounded-xl max-w-md backdrop-blur-md z-30">
             <div className=" flex w-full justify-between items-center gap-2">
               <div className="text-3xl">📍</div>
-              <div className="ml-auto text-2xl">↗️</div>
+              <Button variant="arrow" />
             </div>
             <div>
               <div className="font-semibold text-xl">Hachioji Garden</div>
