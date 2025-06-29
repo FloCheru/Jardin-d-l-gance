@@ -24,27 +24,28 @@ function ArrowIcon() {
 }
 
 export default function Button({ variant, children, ...props }) {
-  if (variant === "filled") {
+  if (variant === "primary") {
     return (
-      <button className="button-filled" {...props}>
+      <button className="button button-primary" {...props}>
         {children}
       </button>
     );
   }
-  if (variant === "underline") {
+  if (variant === "secondary") {
     return (
-      <button className="button-underline" {...props}>
+      <button className="button button-secondary" {...props}>
         {children}
       </button>
     );
   }
-  if (variant === "filled-dark") {
+  if (variant === "tertiary") {
     return (
-      <button className="button-filled-dark" {...props}>
+      <button className="button button-tertiary" {...props}>
         {children}
       </button>
     );
   }
+
   if (variant === "arrow") {
     return (
       <button className="button-arrow" {...props}>
