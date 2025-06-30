@@ -1,27 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { MoveRight } from "lucide-react";
 
-// Flèche SVG orientée à 34.46°
-function ArrowIcon() {
-  return (
-    <svg
-      width="24"
-      height="24"
-      viewBox="0 0 56 56"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      style={{ transform: "rotate(34.46deg)" }}
-    >
-      <path
-        d="M14 42L42 14M42 14H18M42 14V38"
-        stroke="#202E13"
-        strokeWidth="3"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
+// Flèche SVG orientée à 34.46
 
 export default function Button({ variant, children, ...props }) {
   if (variant === "primary") {
@@ -49,7 +30,7 @@ export default function Button({ variant, children, ...props }) {
   if (variant === "arrow") {
     return (
       <button className="button-arrow" {...props}>
-        <ArrowIcon />
+        <MoveRight />
       </button>
     );
   }
