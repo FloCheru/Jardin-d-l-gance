@@ -4,24 +4,29 @@ import { MoveRight } from "lucide-react";
 
 // Flèche SVG orientée à 34.46
 
-export default function Button({ variant, children, ...props }) {
+export default function Button({
+  variant,
+  children,
+  className = "",
+  ...props
+}) {
   if (variant === "primary") {
     return (
-      <button className="button button-primary" {...props}>
+      <button className={`button button-primary ${className}`} {...props}>
         {children}
       </button>
     );
   }
   if (variant === "secondary") {
     return (
-      <button className="button button-secondary" {...props}>
+      <button className={`button button-secondary ${className}`} {...props}>
         {children}
       </button>
     );
   }
   if (variant === "tertiary") {
     return (
-      <button className="button button-tertiary" {...props}>
+      <button className={`button button-tertiary ${className}`} {...props}>
         {children}
       </button>
     );
@@ -29,16 +34,20 @@ export default function Button({ variant, children, ...props }) {
 
   if (variant === "arrow") {
     return (
-      <button className="button-l button-arrow" {...props}>
+      <button className={`button-l button-arrow ${className}`} {...props}>
         <MoveRight />
       </button>
     );
   }
   // Par défaut, bouton classique
-  return <button {...props}>{children}</button>;
+  return (
+    <button className={className} {...props}>
+      {children}
+    </button>
+  );
 }
 
 Button.propTypes = {
-  variant: PropTypes.oneOf(["filled", "underline", "filled-dark", "arrow"]),
+  variant: PropTypes.oneOf(["primary", "secondary", "tertiary", "arrow"]),
   children: PropTypes.node,
 };

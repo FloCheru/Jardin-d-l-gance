@@ -89,7 +89,7 @@ a {
   align-items: center;
   justify-content: space-between;
   width: 100vw;
-  padding: 0 var(--padding-m);
+  padding: 0 var(--padding-m) 80px var(--padding-m);
 }
 
 .hero-title {
@@ -172,6 +172,7 @@ a {
   padding: var(--padding-s) 32px;
   border: none;
   border-radius: 0;
+  max-width: max-content;
 }
 
 .button-primary {
