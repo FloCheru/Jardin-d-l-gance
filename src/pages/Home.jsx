@@ -2,19 +2,21 @@ import backGroundHomePage from "../assets/homepage/background-homepage.jpg";
 import Button from "../components/Button";
 import Navbar from "../components/Navbar";
 import { MapPin } from "lucide-react";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
-    <div className="container relative overflow-hidden border-8 border-red-500">
-      {/* Image de fond */}
-      <img
-        src={backGroundHomePage}
-        alt="Jardin paysager"
-        className="absolute inset-0 w-full h-full object-cover z-0"
-      />
-      {/* Overlay sombre pour lisibilité */}
-      <div className="background-overlay" />
-
+    <div>
+      <div className="container relative h-screen">
+        {/* Image de fond */}
+        <img
+          src={backGroundHomePage}
+          alt="Jardin paysager"
+          className="absolute inset-0 w-full h-full object-cover z-0"
+        />
+        {/* Overlay sombre pour lisibilité */}
+        <div className="background-overlay" />
+          
       {/* Contenu principal centré */}
       <div className="relative z-20 flex flex-col justify-between gap-[var(--padding-m)] w-full h-full ">
         <Navbar />
@@ -92,6 +94,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

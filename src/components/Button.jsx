@@ -29,7 +29,7 @@ export default function Button({ variant, children, ...props }) {
 
   if (variant === "arrow") {
     return (
-      <button className="button-arrow" {...props}>
+      <button className="button-l button-arrow" {...props}>
         <MoveRight />
       </button>
     );
