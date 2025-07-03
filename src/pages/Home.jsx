@@ -1,10 +1,21 @@
 import backGroundHomePage from "../assets/homepage/background-homepage.jpg";
-import Button from "../components/Button";
-import Navbar from "../components/Navbar";
+import Container from "../components/Container";
+import Button from "../components/Button/Button";
+import Navbar from "../components/Navbar/Navbar";
 import { MapPin, Flame, HeartHandshake, Sprout, Palette } from "lucide-react";
 import img2 from "../assets/aboutUsPage/img2.jpg";
 import img3 from "../assets/aboutUsPage/img3.jpg";
-import Footer from "../components/Footer";
+import Footer from "../components/Footer/Footer";
+import "./Home.css";
+import teamImg1 from "../assets/homepage/team-img1.jpg";
+import teamImg2 from "../assets/homepage/team-img2.jpg";
+import teamImg3 from "../assets/homepage/team-img3.jpg";
+import teamImg4 from "../assets/homepage/team-img4.jpg";
+
+import projectImg1 from "../assets/homepage/project-img1.jpg";
+import projectImg2 from "../assets/homepage/project-img2.jpg";
+import projectImg3 from "../assets/homepage/project-img3.jpg";
+import projectImg4 from "../assets/homepage/project-img4.jpg";
 
 export default function Home() {
   const gridValues = [
@@ -34,228 +45,173 @@ export default function Home() {
     {
       name: "Florian Dubois",
       role: "Paysagiste principal",
-      photo:
-        "https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=facearea&w=400&h=400&q=80",
+      photo: teamImg1,
     },
     {
       name: "Sophie Martin",
       role: "Architecte paysagiste",
-      photo:
-        "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=facearea&w=400&h=400&q=80",
+      photo: teamImg2,
     },
     {
       name: "Lucas Morel",
       role: "Chef de projet",
-      photo:
-        "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=facearea&w=400&h=400&q=80",
+      photo: teamImg3,
     },
     {
       name: "Emma Leroy",
       role: "Assistante paysagiste",
-      photo:
-        "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=facearea&w=400&h=400&q=80",
+      photo: teamImg4,
     },
   ];
 
   const projects = [
     {
-      title: "Jardin japonais zen",
-      image:
-        "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80",
+      title: "Verger méditerranéen",
+      image: projectImg1,
     },
     {
-      title: "Terrasse urbaine chic",
-      image:
-        "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80",
+      title: "Jardin anglais moderne",
+      image: projectImg2,
     },
     {
-      title: "Allée fleurie",
-      image:
-        "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80",
+      title: "Villa contemporaine verte",
+      image: projectImg3,
     },
     {
-      title: "Espace détente bois",
-      image:
-        "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=600&q=80",
+      title: "Terrasse fleurie méditerranéenne",
+      image: projectImg4,
     },
   ];
   return (
     <div>
-      <div className="container relative h-screen pb-8">
-        {/* Image de fond */}
-        <img
-          src={backGroundHomePage}
-          alt="Jardin paysager"
-          className="absolute inset-0 w-full h-full object-cover z-0"
-        />
-        {/* Overlay sombre pour lisibilité */}
-        <div className="background-overlay" />
-
+      <Container variant="image" backgroundImage={backGroundHomePage}>
         {/* Contenu principal centré */}
-        <div className="relative z-20 flex flex-col justify-between gap-[var(--padding-m)] w-full h-full ">
+        <div className="hero-container">
           <Navbar />
-          {/* Bloc Titre, description et 500+ Satisfied Clients */}
-          <div className="flex justify-between items-start">
-            {/* Titre et description */}
-            <div className="flex flex-col justify-center items-start w-[65%]">
-              <h1 className="hero-title mb-6">
+          <div className="hero-main">
+            <div className="hero-content">
+              <h1 className="hero-title">
                 <span className="hero-title-white">CRÉEZ VOTRE</span>
                 <br />
-                <span className="hero-title-lightgray ">JARDIN DE RÊVE</span>
+                <span className="hero-title-lightgray">JARDIN DE RÊVE</span>
               </h1>
-              <p className="hero-desc w-full">
+              <p className="hero-desc">
                 Créons ensemble des jardins d'exception avec passion, créativité
                 et durabilité depuis plus de 15 ans grâce à notre équipe
                 expérimentée d'architectes paysagistes et de jardiniers.
               </p>
             </div>
-            {/* Bloc "500+ Satisfied Clients" */}
-            <div className="flex flex-col items-start gap-s satisfied-clients p-[var(--padding-s)]">
-              <span className="font-semibold text-[var(--color-secondary)]">
-                500+
-              </span>
-              <span className="text-[var(--color-secondary)] font-[var(--font-weight-regular)] ">
-                Clients Satisfaits
-              </span>
-              <div className="flex relative">
+
+            <div className="satisfied-clients">
+              <span className="clients-number">500+</span>
+              <span className="clients-text">Clients Satisfaits</span>
+              <div className="clients-circles">
                 <div className="satisfied-clients-circle"></div>
-                <div className="satisfied-clients-circle !-translate-x-4"></div>
-                <div className="satisfied-clients-circle !-translate-x-8"></div>
+                <div className="satisfied-clients-circle"></div>
+                <div className="satisfied-clients-circle"></div>
               </div>
             </div>
           </div>
-          {/* Bloc boutons + Hachioji Garden */}
-          <div className="flex justify-between items-start">
-            <div className="flex gap-[20px]">
+
+          <div className="hero-buttons">
+            <div className="buttons-group">
               <Button variant="secondary">Commencer</Button>
               <Button variant="tertiary">Découvrir nos Projets</Button>
             </div>
-            {/* <div>
-              <div className="font-semibold text-[var(--color-secondary)]">
-                Jardin Méditerranéen
-              </div>
-              <div className="font-normal text-[var(--color-secondary)]">
-                Réalisation complète d'un aménagement paysager contemporain
-                alliant tradition provençale et modernité
-              </div>
-            </div> */}
           </div>
         </div>
-      </div>
+      </Container>
+
       {/* Seconde div */}
-      <div className="flex flex-col w-full gap-l bg-[var(--surface-color-primary)] p-[var(--padding-m)]">
-        <div className="flex w-1/2 gap-m">
-          <h2 className="flex-1 h-full">
-            CRÉATEURS D'ESPACES VERTS D'EXCEPTION DEPUIS PLUS DE 15ANS
-          </h2>
-          <p className="flex-1 text-[var(--text-color-tertiary)] font-size: var(--button-font-size)">
-            Passionnés par l'art du paysage, nous transformons vos extérieurs en
-            véritables havres de paix. Notre équipe d'experts allie créativité,
-            savoir-faire technique et respect de l'environnement pour donner vie
-            à vos projets les plus ambitieux.
-          </p>
-        </div>
-        <div className="flex h-[320px] gap-s">
-          <div className="w-1/3 h-full overflow-hidden">
-            <img
-              src={backGroundHomePage}
-              alt="Jardin paysager"
-              className="img-cover"
-            />
+      <Container variant="surface-primary">
+        <div className="about-section">
+          <div className="text-container">
+            <h2 className="text-title">
+              CRÉATEURS D'ESPACES VERTS D'EXCEPTION DEPUIS PLUS DE 15ANS
+            </h2>
+            <p className="text-description">
+              Passionnés par l'art du paysage, nous transformons vos extérieurs
+              en véritables havres de paix. Notre équipe d'experts allie
+              créativité, savoir-faire technique et respect de l'environnement
+              pour donner vie à vos projets les plus ambitieux.
+            </p>
           </div>
-          <div className="flex-1 h-full overflow-hidden">
-            <img src={img2} alt="Jardin paysager" className="img-cover" />
+          <div className="images-container">
+            <div className="image-wrapper-small">
+              <img
+                src={backGroundHomePage}
+                alt="Jardin paysager"
+                className="img-cover"
+              />
+            </div>
+            <div className="image-wrapper-large">
+              <img src={img2} alt="Jardin paysager" className="img-cover" />
+            </div>
           </div>
         </div>
-      </div>
+      </Container>
 
       {/* Troisième div */}
-      <div className="flex flex-col gap-l w-full bg-[var(--color-primary)] text-[var(--color-secondary)] p-[var(--padding-m)]">
-        <h1>COMMENT NOUS TRAVAILLONS</h1>
-        <div className="flex justify-between items-end h-[600px] gap-l ">
-          {/* Image */}
-          <div className="w-1/2 h-full overflow-hidden">
+      <Container variant="surface-secondary">
+        <h1 className="contact-title">COMMENT NOUS TRAVAILLONS</h1>
+        <div className="work-content">
+          <div className="work-image-container">
             <img src={img3} alt="Jardin paysager" className="img-cover" />
           </div>
-          {/* Grid */}
-          <div className="flex-1 grid grid-cols-2 gap-s h-2/3">
+
+          <div className="work-grid">
             {gridValues.map((item, idx) => (
-              <div key={idx} className="flex flex-col gap-s">
-                {/* Icône dans un carré blanc centré */}
-                <div className="">
-                  <span className="">{item.icon}</span>
+              <div key={idx} className="work-item">
+                <div className="work-icon">
+                  <span>{item.icon}</span>
                 </div>
-                <h3 className="">{item.title}</h3>
-                <p className="">{item.text}</p>
+                <h3 className="work-item-title">{item.title}</h3>
+                <p className="work-item-text">{item.text}</p>
               </div>
             ))}
           </div>
         </div>
-      </div>
+      </Container>
 
       {/* Quatrième div */}
-      <div className="flex flex-col w-full bg-[var(--surface-color-primary)] p-[var(--padding-m)]">
-        <h2>NOTRE EQUIPE</h2>
-        <div className="flex justify-between gap-s w-full">
+      <Container variant="surface-primary">
+        <h2 className="team-section-title">NOTRE EQUIPE</h2>
+        <div className="team-grid">
           {team.map((item, idx) => (
-            <div
-              key={idx}
-              className="flex-1 relative flex flex-col justify-end h-[460px] text-[var(--color-secondary)]"
-              style={{ border: "solid 1px red" }}
-            >
-              <img
-                src={item.photo}
-                alt={item.name}
-                className="absolute inset-0 w-full h-full object-cover z-0"
-              />
-              <h3 className="z-1">{item.name}</h3>
-              <p className="z-1">{item.role}</p>
+            <div key={idx} className="team-member">
+              <img src={item.photo} alt={item.name} className="team-photo" />
+              <h3 className="team-name">{item.name}</h3>
+              <p className="team-role">{item.role}</p>
             </div>
           ))}
         </div>
-      </div>
+      </Container>
 
       {/* Cinquième div */}
-      <div className="flex flex-col items-start w-full bg-[var(--color-primary)] text-[var(--color-secondary)]">
-        <h1>NOS TRAVAUX</h1>
-        <div className="flex justify-between gap-s w-full">
+      <Container variant="surface-secondary">
+        <h1 className="contact-title">NOS TRAVAUX</h1>
+        <div className="projects-grid">
           {projects.map((item, idx) => (
-            <div
-              key={idx}
-              className="flex-1 relative flex flex-col justify-end h-[460px] text-[var(--color-secondary)]"
-              style={{ border: "solid 1px red" }}
-            >
+            <div key={idx} className="project-item">
               <img
                 src={item.image}
                 alt={item.title}
-                className="absolute inset-0 w-full h-full object-cover z-0"
+                className="project-image"
               />
-              <p className="z-1">{item.title}</p>
+              <p className="project-title">{item.title}</p>
             </div>
           ))}
         </div>
-      </div>
+      </Container>
 
       {/*div contact */}
-      <div className="container relative py-8">
-        {/* Image de fond */}
-        <img
-          src={backGroundHomePage}
-          alt="Jardin paysager"
-          className="absolute inset-0 w-full h-full object-cover z-0"
-        />
-        {/* Overlay sombre pour lisibilité */}
-        <div className="background-overlay" />
-        <div
-          className="z-10 flex flex-col gap-s w-full"
-          style={{ border: "1px solid red" }}
-        >
-          <h1 className="z-1 text-[var(--color-secondary)]">
-            PRÊT À TRANSFORMER VOTRE JARDIN ?
-          </h1>
+      {/* Contact section */}
+      <Container variant="image" backgroundImage={backGroundHomePage}>
+        <div className="contact-content">
+          <h1 className="contact-title">PRÊT À TRANSFORMER VOTRE JARDIN ?</h1>
           <Button variant="secondary">Contactez-nous</Button>
         </div>
-      </div>
+      </Container>
       <Footer />
     </div>
   );

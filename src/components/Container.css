@@ -1,0 +1,108 @@
+/* Base commune à tous les containers */
+.container-base {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100vh;
+  padding: 3rem;
+}
+
+/* Container avec hauteur automatique (pas de 100vh) */
+.container-auto-height {
+  height: auto !important;
+  justify-content: flex-start;
+}
+
+/* Variantes de fond */
+.container-surface-primary {
+  background-color: var(--color-surface-primary);
+}
+
+.container-surface-secondary {
+  background-color: var(--color-surface-secondary);
+}
+
+.container-surface-tertiary {
+  background-color: var(--color-surface-tertiary);
+}
+
+.container-image {
+  position: relative;
+  width: 100vw;
+  padding: 0 var(--padding-m) 5rem var(--padding-m);
+}
+
+/* Image de fond */
+.container-background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Overlay */
+.container-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #000;
+  opacity: 0.4;
+  z-index: 10;
+}
+
+/* Contenu */
+.container-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container-content-image {
+  position: relative;
+  z-index: 20;
+  justify-content: space-between; /* Pour l'image, pas de centrage vertical */
+}
+
+/* Contenu pour hauteur automatique */
+.container-auto-height .container-content {
+  height: auto;
+  justify-content: flex-start;
+}
+
+/* Modification pour les pages du haut (sans padding-top) */
+.container-top-page {
+  padding-top: 0 !important;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  /* .container-base {
+    padding: 0 2rem 5rem 2rem;
+  } */
+
+  .container-image {
+    padding: 0 2rem 5rem 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* .container-base {
+    padding: 0 3rem 5rem 3rem;
+  } */
+
+  .container-image {
+    padding: 0 3rem 5rem 3rem;
+  }
+}

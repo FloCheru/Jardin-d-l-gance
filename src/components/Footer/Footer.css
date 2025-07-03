@@ -1,0 +1,232 @@
+/* Footer */
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--padding-xl);
+  width: 100%;
+  background-color: var(--color-surface-primary);
+  padding: var(--padding-xl);
+}
+
+/* Section du haut */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--padding-xxl);
+}
+
+/* Section gauche */
+.footer-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--padding-xl);
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--padding-s);
+  max-width: 400px;
+}
+
+.footer-logo {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-light);
+  color: var(--color-primary);
+}
+
+.footer-divider {
+  background-color: var(--color-primary);
+  width: 3px;
+  height: 100%;
+  min-height: 60px;
+}
+
+.footer-tagline {
+  color: var(--color-text-tertiary);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-xl);
+  line-height: 1.4;
+}
+
+/* Champ email */
+.footer-email {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-secondary);
+  height: 100px;
+  padding: var(--padding-s);
+  border-radius: var(--border-radius-m);
+}
+
+.footer-email-input {
+  flex: 1;
+  background-color: transparent;
+  color: var(--color-primary);
+  border: none;
+  outline: none;
+  font-size: var(--font-size-l);
+  padding: var(--padding-m);
+}
+
+.footer-email-input::placeholder {
+  color: var(--color-primary);
+  opacity: 0.7;
+}
+
+/* Section droite */
+.footer-right {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--padding-s);
+}
+
+.footer-column-title {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-m);
+  margin-bottom: var(--padding-m);
+}
+
+.footer-links {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--padding-s);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-link {
+  color: var(--color-primary);
+  font-size: var(--font-size-s);
+  cursor: pointer;
+  transition: var(--transition-medium);
+}
+
+.footer-link:hover {
+  opacity: 0.7;
+  transform: translateX(4px);
+}
+
+/* Ligne de séparation */
+.footer-separator {
+  border-top: 1px solid var(--color-primary);
+  margin: var(--padding-m) 0;
+}
+
+/* Section du bas */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color-primary);
+}
+
+.footer-copyright {
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-regular);
+}
+
+.footer-legal {
+  display: flex;
+  align-items: center;
+  gap: var(--padding-s);
+}
+
+.footer-legal-link {
+  font-size: var(--font-size-s);
+  cursor: pointer;
+  transition: var(--transition-medium);
+}
+
+.footer-legal-link:hover {
+  opacity: 0.7;
+}
+
+.footer-legal-divider {
+  background-color: var(--color-primary);
+  width: 3px;
+  height: 20px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .footer-top {
+    gap: var(--padding-xl);
+  }
+
+  .footer-brand {
+    max-width: 300px;
+  }
+
+  .footer-logo {
+    font-size: var(--font-size-3xl);
+  }
+
+  .footer-tagline {
+    font-size: var(--font-size-l);
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+    gap: var(--padding-xl);
+  }
+
+  .footer-right {
+    justify-content: space-around;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: var(--padding-m);
+    text-align: center;
+  }
+
+  .footer-email {
+    height: 80px;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer {
+    padding: var(--padding-l);
+  }
+
+  .footer-brand {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--padding-m);
+  }
+
+  .footer-divider {
+    width: 100%;
+    height: 2px;
+    min-height: 2px;
+  }
+
+  .footer-right {
+    flex-direction: column;
+    gap: var(--padding-xl);
+  }
+
+  .footer-legal {
+    flex-direction: column;
+    gap: var(--padding-s);
+  }
+
+  .footer-legal-divider {
+    width: 100%;
+    height: 1px;
+  }
+}

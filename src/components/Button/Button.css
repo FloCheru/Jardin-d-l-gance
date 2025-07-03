@@ -1,0 +1,208 @@
+/* Button.css */
+
+/* Variables spécifiques aux boutons */
+:root {
+  --button-font-size: var(--font-size-m);
+  --button-radius: var(--border-radius-m);
+  --button-underline-weight: 2px;
+  --size-l: 3rem; /* 48px */
+}
+
+/* Base commune à tous les boutons */
+.button {
+  font-size: var(--button-font-size);
+  padding: var(--padding-s) 2rem; /* 32px */
+  border: none;
+  border-radius: 0;
+  max-width: max-content;
+  cursor: pointer;
+  transition: var(--transition-medium);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-family: inherit;
+  outline: none;
+}
+
+.button:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Variantes de style */
+.button-primary {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-secondary);
+  background: var(--color-primary);
+}
+
+.button-primary:hover {
+  background: var(--color-primary);
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
+
+.button-primary:active {
+  transform: translateY(0);
+}
+
+.button-secondary {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+  background: var(--color-secondary);
+  border: 1px solid var(--color-primary);
+}
+
+.button-secondary:hover {
+  background: var(--color-primary);
+  color: var(--color-secondary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
+
+.button-secondary:active {
+  transform: translateY(0);
+}
+
+.button-tertiary {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-secondary);
+  background: transparent;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: var(--button-underline-weight);
+  padding: var(--padding-s) var(--padding-m);
+}
+
+.button-tertiary:hover {
+  text-decoration-thickness: calc(var(--button-underline-weight) + 1px);
+  transform: translateY(-1px);
+}
+
+.button-tertiary:active {
+  transform: translateY(0);
+}
+
+/* Bouton avec icône flèche */
+.button-arrow {
+  background: var(--color-secondary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  transform: rotate(-34.46deg);
+  padding: 0;
+  transition: var(--transition-medium);
+}
+
+.button-arrow:hover {
+  background: var(--color-primary);
+  transform: rotate(-34.46deg) scale(1.1);
+  box-shadow: var(--shadow-medium);
+}
+
+.button-arrow:active {
+  transform: rotate(-34.46deg) scale(1);
+}
+
+/* Tailles pour boutons ronds */
+.button-l {
+  height: var(--size-l);
+  width: var(--size-l);
+}
+
+.button-xl {
+  height: var(--padding-xxl); /* 5rem = 80px */
+  width: var(--padding-xxl);
+}
+
+/* Icône dans le bouton arrow */
+.button-arrow::before {
+  content: "→";
+  font-size: var(--font-size-xl);
+  color: var(--color-primary);
+  transition: var(--transition-medium);
+}
+
+.button-arrow:hover::before {
+  color: var(--color-secondary);
+}
+
+/* États loading */
+.button-loading {
+  position: relative;
+  color: transparent;
+}
+
+.button-loading::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .button {
+    padding: var(--padding-xs) var(--padding-m);
+    font-size: var(--font-size-s);
+  }
+
+  .button-l {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+
+  .button-xl {
+    height: 3.5rem;
+    width: 3.5rem;
+  }
+
+  .button-arrow::before {
+    font-size: var(--font-size-l);
+  }
+}
+
+/* Groupes de boutons */
+.button-group {
+  display: flex;
+  gap: var(--padding-s);
+  align-items: center;
+}
+
+.button-group .button {
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .button-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .button-group .button {
+    width: 100%;
+    justify-content: center;
+  }
+}

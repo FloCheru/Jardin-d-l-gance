@@ -1,8 +1,81 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* ================================
+   VARIABLES GLOBALES
+   ================================ */
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
+:root {
+  /* Couleurs de base */
+  --color-dark-green: #202e13;
+  --color-dark-green-opacity: #202e13e6;
+  --color-light-green: #e8e7d2;
+  --color-white: #ffffff;
+  --color-grey: #9c9898;
+  --color-light-blue: #e1edee;
+
+  /* Couleurs principales */
+  --color-primary: var(--color-dark-green);
+  --color-secondary: var(--color-white);
+
+  /* Surfaces (arrière-plans) */
+  --color-surface-primary: var(--color-light-green);
+  --color-surface-secondary: var(--color-dark-green-opacity);
+  /* --color-surface-tertiary: var(--color-light-blue); */
+
+  /* Textes */
+  --color-text-primary: var(--color-dark-green);
+  --color-text-secondary: var(--color-white);
+  --color-text-tertiary: var(--color-grey);
+
+  /* Espacements */
+  --padding-xs: 0.5rem; /* 8px */
+  --padding-s: 1rem; /* 16px */
+  --padding-m: 1.5rem; /* 24px */
+  --padding-l: 2rem; /* 32px */
+  --padding-xl: 3rem; /* 48px */
+  --padding-xxl: 5rem; /* 80px */
+
+  /* Bordures */
+  --border-radius-s: 0.5rem; /* 8px */
+  --border-radius-m: 0.75rem; /* 12px */
+  --border-radius-l: 1rem; /* 16px */
+  --border-radius-xl: 1.5rem; /* 24px */
+
+  /* Ombres */
+  --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --shadow-strong: 0 8px 32px rgba(0, 0, 0, 0.12);
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.3s ease;
+  --transition-slow: 0.5s ease;
+
+  /* Typographie */
+  --font-size-xs: 0.75rem; /* 12px */
+  --font-size-s: 0.875rem; /* 14px */
+  --font-size-m: 1rem; /* 16px */
+  --font-size-l: 1.125rem; /* 18px */
+  --font-size-xl: 1.25rem; /* 20px */
+  --font-size-2xl: 1.5rem; /* 24px */
+  --font-size-3xl: 2rem; /* 32px */
+  --font-size-4xl: 2.5rem; /* 40px */
+
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Z-index */
+  --z-background: 0;
+  --z-overlay: 10;
+  --z-content: 20;
+  --z-header: 30;
+  --z-modal: 40;
+}
+
+/* ================================
+       RESET & BASE STYLES
+       ================================ */
 
 *,
 ::after,
@@ -12,33 +85,7 @@
   box-sizing: border-box;
 }
 
-:root {
-  --font-inter: "Inter", system-ui, sans-serif;
-  --color-primary: #202e13;
-  --color-secondary: #ffffff;
-  --surface-color-primary: #e8e7d2;
-  --surface-color-secondary: #e1edee;
-  --text-color-tertiary: #707070;
-  --button-font-size: 24px;
-  --padding-s: 20px;
-  --padding-m: 40px;
-  --size-l: 60px;
-  --padding-xl: 80px;
-  --size-2xl: 120px;
-  --button-size: 80px;
-  --arrow-in-button-size: 56px;
-  --button-underline-weight: 2px;
-  --color-title-white: #ffffff;
-  --color-title-lightgray: #e0dfdf;
-  --color-text-light: #d7d7d7;
-  --hero-title-size: 96px;
-  --hero-desc-size: 26px;
-  --hero-title-div: 36px;
-  --hero-nav-size: 22px;
-  --font-weight-regular: 400;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 700;
-}
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
 
 .gap-s {
   gap: var(--padding-s);
@@ -51,14 +98,6 @@
 }
 .gap-2xl {
   gap: var(--size-2xl);
-}
-.button-l {
-  height: var(--size-l);
-  width: var(--size-l);
-}
-.button-xl {
-  height: var(--padding-l);
-  width: var(--padding-l);
 }
 
 #root {
@@ -164,46 +203,4 @@ a {
 
 .text-secondary {
   color: var(--color-secondary);
-}
-
-/* Utilitaires pour boutons */
-.button {
-  font-size: var(--button-font-size);
-  padding: var(--padding-s) 32px;
-  border: none;
-  border-radius: 0;
-  max-width: max-content;
-}
-
-.button-primary {
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-secondary);
-  background: var(--color-primary);
-}
-
-.button-secondary {
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-primary);
-  background: var(--color-secondary);
-}
-
-.button-tertiary {
-  font-weight: var(--font-weight-bold);
-  color: var(--color-secondary);
-  background: transparent;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  text-decoration-thickness: var(--button-underline-weight);
-}
-
-.button-arrow {
-  background: var(--color-secondary);
-  border-radius: var(--button-radius);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  border-radius: 50%;
-  transform: rotate(-34.46deg);
-  padding: 0;
 }
